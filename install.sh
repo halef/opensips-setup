@@ -41,9 +41,9 @@ apt-get install -y --no-install-recommends packaging-dev ubuntu-dev-tools \
 mkdir -p "$download_location" "$install_location"
 
 # Clone the repo
-cd ${src_dir}
+cd $download_location
 if check_dir opensips_${branch}; then
-    info "Skipping download. Found '${src_dir}/opensips_${branch}' already present."
+    info "Skipping download. Found '${download_location}/opensips_${branch}' already present."
 else 
     git clone ${repo_url} opensips_${branch}
 fi
@@ -64,7 +64,6 @@ fi
 if ! check_user opensips; then
     useradd -r -s /bin/false -g opensips opensips
 fi
-
 
 cp ${SCRIPT_DIR}/init.d/opensips.init-debian /etc/init.d/opensips
 chmod +x /etc/init.d/opensips

@@ -1,0 +1,50 @@
+# $Id$
+#
+# The OpenSIPS configuration file for the control tools.
+#
+# Here you can set variables used in the opensipsctl and opensipsdbctl setup
+# scripts. Per default all variables here are commented out, the control tools
+# will use their internal default values.
+
+PYTHONPATH=/export/Apps/scripts
+
+# your SIP domain
+SIP_DOMAIN=%%INTERNAL_DOMAIN_NAME%%
+
+# If you want to setup a database with opensipsdbctl, you must at least specify
+# this parameter.
+DBENGINE=MYSQL
+DBPORT=%%DB_PORT%%
+
+# database host
+DBHOST=%%DB_HOST%%
+
+# database name
+DBNAME=%%DB_NAME%%
+
+# database path used by dbtext, db_berkeley, or sqlite
+# DB_PATH="/usr/local/etc/opensips/dbtext"
+
+# database read/write user
+DBRWUSER=%%DB_USER_RW%%
+
+# password for database read/write user
+DBRWPW=%%DB_PASSWD_USER_RW%%
+
+# database super user (for ORACLE this is 'scheme-creator' user)
+DBROOTUSER=%%DB_USER_ROOT%%
+
+# opensips standard modules
+ STANDARD_MODULES="standard acc domain group permissions registrar usrloc 
+                   msilo alias_db uri_db speeddial avpops auth_db dialog 
+                   dispatcher dialplan drouting nathelper load_balancer"
+
+# path to FIFO file
+OSIPS_FIFO="/tmp/opensips_fifo"
+
+# verbose - debug purposes - default '0'
+VERBOSE=1
+
+# OPENSIPS START Options
+# PID file path - default is: /var/run/opensips.pid
+PID_FILE=%%OPENSIPS_HOME%%/var/run/opensips/opensips.pid

@@ -65,7 +65,6 @@ if ! check_user opensips; then
     useradd -r -s /bin/false -g opensips opensips
 fi
 
-
 cp ${SCRIPT_DIR}/init.d/opensips.init-debian /etc/init.d/opensips
 chmod +x /etc/init.d/opensips
 

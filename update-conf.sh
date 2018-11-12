@@ -40,7 +40,7 @@ fi
 
 
 # Replace configuration
-rm -rf ${OPENSIPS_HOME}/etc/opensips*
+rm -rf ${OPENSIPS_HOME}/etc/opensips/*
 cp -r ${CONFIG_DIR}/* ${OPENSIPS_HOME}/etc/opensips/.
 
 # opensips.cfg

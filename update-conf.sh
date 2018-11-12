@@ -44,9 +44,9 @@ rm -rf ${OPENSIPS_HOME}/etc/opensips/*
 cp -r ${CONFIG_DIR}/* ${OPENSIPS_HOME}/etc/opensips/.
 
 # opensips.cfg
-sed -i -e "s|%%INTERNAL_IP%%|${internal_ip}|g" ${OPENSIPS_HOME}/etc/opensips/opensips.conf
-sed -i -e "s|%%OPENSIPS_HOME%%|${OPENSIPS_HOME}|g" ${OPENSIPS_HOME}/etc/opensips/opensips.conf
-sed -i -e "s|%%DB_CONNECTION_URI%%|${db_connection_uri}|g" ${OPENSIPS_HOME}/etc/opensips/opensips.conf
+sed -i -e "s|%%INTERNAL_IP%%|${internal_ip}|g" ${OPENSIPS_HOME}/etc/opensips/opensips.cfg
+sed -i -e "s|%%OPENSIPS_HOME%%|${OPENSIPS_HOME}|g" ${OPENSIPS_HOME}/etc/opensips/opensips.cfg
+sed -i -e "s|%%DB_CONNECTION_URI%%|${db_connection_uri}|g" ${OPENSIPS_HOME}/etc/opensips/opensips.cfg
 
 # opensipsctlrc
 sed -i -e "s|%%OPENSIPS_HOME%%|${OPENSIPS_HOME}|g" ${OPENSIPS_HOME}/etc/opensips/opensipsctlrc

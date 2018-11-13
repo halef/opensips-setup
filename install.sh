@@ -53,6 +53,9 @@ git checkout ${branch}
 
 
 # Compile and install
+cp Makefile.conf.template Makefile.conf
+sed -i -e "s|exclude_modules?=.*$|exclude_modules?= aaa_radius b2b_logic cachedb_cassandra cachedb_couchbase cachedb_memcached cachedb_mongodb cachedb_redis carrierroute compression cpl_c db_berkeley db_http db_mysql db_oracle db_perlvdb db_postgres db_sqlite db_unixodbc dialplan emergency event_rabbitmq h350 regex identity jabber json ldap lua httpd mi_xmlrpc_ng mmgeoip osp perl pi_http proto_sctp proto_tls proto_wss presence presence_dialoginfo presence_mwi presence_xml pua pua_bla pua_dialoginfo pua_mi pua_usrloc pua_xmpp python rest_client rls sngtc snmpstats tls_mgm xcap xcap_client xmpp|g" Makefile.conf
+sed -i -e "s|include_modules?=.*$|include_modules?= db_mysql httpd mi_xmlrpc_ng perl python|g" Makefile.conf
 make prefix=${install_location}
 make prefix=${install_location} install
 

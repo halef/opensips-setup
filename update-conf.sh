@@ -58,4 +58,11 @@ sed -i -e "s|%%DB_USER_RW%%|${db_user_rw}|g" ${OPENSIPS_HOME}/etc/opensips/opens
 sed -i -e "s|%%DB_PORT%%|${db_port}|g" ${OPENSIPS_HOME}/etc/opensips/opensipsctlrc
 sed -i -e "s|%%DB_USER_ROOT%%|root|g" ${OPENSIPS_HOME}/etc/opensips/opensipsctlrc
 
+# event handler
+sed -i -e "s|%%INTERNAL_IP%%|${internal_ip}|g" ${OPENSIPS_HOME}/event_handler/halef/event_handler.cfg
+sed -i -e "s|%%DB_NAME%%|${db_name}|g" ${OPENSIPS_HOME}/event_handler/halef/event_handler.cfg
+sed -i -e "s|%%DB_HOST%%|${db_host}|g" ${OPENSIPS_HOME}/event_handler/halef/event_handler.cfg
+sed -i -e "s|%%DB_PASSWD_USER_RW%%|${db_passwd_user_rw}|g" ${OPENSIPS_HOME}/event_handler/halef/event_handler.cfg
+sed -i -e "s|%%DB_USER_RW%%|${db_user_rw}|g" ${OPENSIPS_HOME}/event_handler/halef/event_handler.cfg
+
 chown -R opensips ${OPENSIPS_HOME}

@@ -77,6 +77,10 @@ sed -i -e "s|%%P_MEMORY%%|0|g" /etc/init.d/opensips
 
 update-rc.d opensips defaults
 
+# Installing event handler
+mkdir -p ${install_location}/event_handler
+cp -r ${SCRIPT_DIR}/event_handler/halef ${install_location}/event_handler/halef
+
 chown -R opensips ${install_location}
 
 echo "export OPENSIPS_HOME=${install_location}" >> /etc/bash.bashrc

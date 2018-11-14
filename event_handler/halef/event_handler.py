@@ -2,12 +2,10 @@
 import logging
 import signal
 import threading
+import xmlrpclib
 from logging.config import fileConfig
 from os import getcwd, path
 from ConfigParser import ConfigParser
-
-# Third party dependencies
-import xmlrpclib
 from SimpleXMLRPCServer import SimpleXMLRPCServer
 from SimpleXMLRPCServer import SimpleXMLRPCRequestHandler
 
@@ -36,7 +34,7 @@ OPENSIPS_XMLRPC_URI = 'http://{ip}:8888'.format(ip=OPENSIPS_IP)
 LISTENER_HOST = '127.0.0.1'
 LISTENER_PORT = 8081
 LISTENER_PATH = 'e_dummy_h'
-LISTENER_URL = 'xmlrpc:{host}:{post}:{path}' .format(
+LISTENER_URL = 'xmlrpc:{host}:{port}:{path}' .format(
     host = LISTENER_HOST,
     port = LISTENER_PORT,
     path = LISTENER_PATH
@@ -209,4 +207,6 @@ if __name__ == "__main__":
     try:
         local_server.serve_forever()
     except Exception as err:
-        logger.error('error STOPPED event listener server: {error}'.format(str(err)))
+        logger.error('error STOPPED event listener server: {error}'.format(
+            error=str(err))
+        )
